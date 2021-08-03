@@ -14,9 +14,9 @@ increment3(3)
 increment4(4)
 
 val x: Int = 1
-def add(x: Int, y: Int): Int = x + y
+def add1(y: Int): Int = x + y
 
-add(1, 2)
+add1(2)
 
 val add2: Int => (Int => Int) =
   x => y => x + y
@@ -31,10 +31,12 @@ assert(even(1) == "odd")
 def aFormatter(x: Any, prefix: String = "[", suffix: String = "]") =
   prefix + x + suffix
 
+// Unit == void
 assert(aFormatter(1) == "[1]")
 assert(aFormatter(2, "(", ")") == "(2)")
 assert(aFormatter(3, prefix = "(", suffix = ")") == "(3)")
 assert(aFormatter(4, suffix = ")", prefix = "(") == "(4)")
+assert(aFormatter(5, prefix = "(") == "(5]")
 
 //Function composition
 val F : Int => Int = x  => x + 1

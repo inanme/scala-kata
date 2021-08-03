@@ -4,7 +4,8 @@
 
 trait SomeClass
 
-object SomeClass
+//companion object
+object SomeClass // object is a JVM wide singleton
 
 object SomeOtherClass {
   def likeStatic = 1
